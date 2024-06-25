@@ -17,5 +17,6 @@ jobs:
         with:
           python-version: '3.9'
           cache: 'pip' # caching pip dependencies
+      - run: cat requirements.txt
       - run: pip install -r requirements.txt
       - run: ls -ltra

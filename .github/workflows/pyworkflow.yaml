@@ -25,3 +25,14 @@ jobs:
         continue-on-error: true
       - name: checking error
         run: echo testing after error execution
+      
+      - name: build docker istallation and env setup 
+        uses: docker-practice/actions-setup-docker@master
+        timeout-minutes: 12
+
+      - name: build docker image
+        run: |
+          set -x
+
+          docker version
+          docker build -t mypydoc .
